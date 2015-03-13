@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html ng-app="App">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.css">
+    <link rel="stylesheet" href="css/jquery-ui.css">
+    <link rel="stylesheet" href="css/jquery-ui-theme.css">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <title>Angular + Bootstrap + JQuery + JQueryUI + JQueryUI-Touch-Punch initial application</title>
+
+</head>
+
+<body ng-controller="MainCtrl">
+    
+    <intro></intro>
+
+    <script src="js/my-utils.js"></script>
+    <script src="js/angular.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script src="js/jquery-ui-touch-punch.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script>
+
+    //MODULE:
+    var app = angular.module("App", []);
+
+    //CONTROLLERS:
+    app.controller("MainCtrl", [
+    	"$scope", "$rootScope", "InfoService",
+    	function($scope, $rootScope, infoService) {
+        	
+    	}
+    ]);
+    
+    //SERVICES:
+    app.service("InfoService", function() {
+        this.appName = "Angular + Bootstrap + JQuery + JQueryUI + JQueryUITouchPunch + Roboto";
+        this.appVersion = "0.0.1";
+        this.appAuthor = "MySelf";
+        this.url = "http://localhost/";
+    });
+
+    //DIRECTIVES:
+    app.directive("intro", function() {
+    	var htmlTemplate = ''+
+            '   <div class="jumbotron" style="text-align: center">' +
+            '       <h1>Start content here</h1>' +
+            '   </div>' +
+            '   <h2 style="text-align: center">' +
+            '		Boilerplate is ready for mobile apps development' + 
+            '		and responsive design, so... start coding!!' +
+            '	</h2>' +
+            '   <h3 style="text-align: center">' +
+            '		You can freely use Bootstrap, Angular, JQuery, ' +
+            '		JQueryUI, and it is also included JQuery Touch Punch,' +
+            ' 		and Roboto is the default font-family!' + 
+            '	</h3>';
+        return {
+            restrict: "E",
+            template: htmlTemplate
+        };
+    });
+
+    </script>
+</body>
+</html>
